@@ -38,6 +38,7 @@
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        box-sizing: border-box; /* Ensures padding doesn't affect width */
       }
 
       button {
@@ -49,6 +50,7 @@
         border-radius: 5px;
         font-size: 16px;
         cursor: pointer;
+        margin-top: 10px;
       }
 
       button:hover {
@@ -71,68 +73,124 @@
 
       <form action="{{ url_for('predict') }}" method="post">
         <div class="form-group">
-          <label>Crime Rate (CRIM)</label>
-          <input type="text" name="CRIM" required />
+          <label>Crime Rate (CRIM) [0 - 90]</label>
+          <input
+            type="number"
+            step="any"
+            min="0"
+            max="90"
+            name="CRIM"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Residential Land Zoned Percentage (ZN)</label>
-          <input type="text" name="ZN" required />
+          <label>Residential Land Zoned Percentage (ZN) [0 - 100]</label>
+          <input
+            type="number"
+            step="any"
+            min="0"
+            max="100"
+            name="ZN"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Non-Retail Business Acres (INDUS)</label>
-          <input type="text" name="INDUS" required />
+          <label>Non-Retail Business Acres (INDUS) [0 - 30]</label>
+          <input
+            type="number"
+            step="any"
+            min="0"
+            max="30"
+            name="INDUS"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Charles River Dummy Variable (CHAS)</label>
-          <input type="text" name="CHAS" required />
+          <label>Charles River Dummy Variable (CHAS) [0 or 1]</label>
+          <input type="number" min="0" max="1" name="CHAS" required />
         </div>
 
         <div class="form-group">
-          <label>Nitric Oxides Concentration (NOX)</label>
-          <input type="text" name="NOX" required />
+          <label>Nitric Oxides Concentration (NOX) [0.3 - 0.9]</label>
+          <input
+            type="number"
+            step="any"
+            min="0.3"
+            max="0.9"
+            name="NOX"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Average Number of Rooms (RM)</label>
-          <input type="text" name="RM" required />
+          <label>Average Number of Rooms (RM) [3 - 9]</label>
+          <input type="number" step="any" min="3" max="9" name="RM" required />
         </div>
 
         <div class="form-group">
-          <label>Age of Property (%) (AGE)</label>
-          <input type="text" name="AGE" required />
+          <label>Age of Property (%) (AGE) [0 - 100]</label>
+          <input
+            type="number"
+            step="any"
+            min="0"
+            max="100"
+            name="AGE"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Distance to Employment Centers (DIS)</label>
-          <input type="text" name="DIS" required />
+          <label>Distance to Employment Centers (DIS) [1 - 13]</label>
+          <input
+            type="number"
+            step="any"
+            min="1"
+            max="13"
+            name="DIS"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Accessibility to Highways (RAD)</label>
-          <input type="text" name="RAD" required />
+          <label>Accessibility to Highways (RAD) [1 - 24]</label>
+          <input type="number" min="1" max="24" name="RAD" required />
         </div>
 
         <div class="form-group">
-          <label>Property Tax Rate (TAX)</label>
-          <input type="text" name="TAX" required />
+          <label>Property Tax Rate (TAX) [180 - 720]</label>
+          <input type="number" min="180" max="720" name="TAX" required />
         </div>
 
         <div class="form-group">
-          <label>Pupil-Teacher Ratio (PTRATIO)</label>
-          <input type="text" name="PTRATIO" required />
+          <label>Pupil-Teacher Ratio (PTRATIO) [12 - 23]</label>
+          <input
+            type="number"
+            step="any"
+            min="12"
+            max="23"
+            name="PTRATIO"
+            required
+          />
         </div>
 
         <div class="form-group">
-          <label>Black Population Index (B)</label>
-          <input type="text" name="B" required />
+          <label>Black Population Index (B) [0 - 400]</label>
+          <input type="number" step="any" min="0" max="400" name="B" required />
         </div>
 
         <div class="form-group">
-          <label>Lower Status Population (%) (LSTAT)</label>
-          <input type="text" name="LSTAT" required />
+          <label>Lower Status Population (%) (LSTAT) [1 - 40]</label>
+          <input
+            type="number"
+            step="any"
+            min="1"
+            max="40"
+            name="LSTAT"
+            required
+          />
         </div>
 
         <button type="submit">Predict House Price</button>
