@@ -147,7 +147,7 @@ python app.py
 
 ---
 
-## 🔌 API Usage
+## 🔌 API Usage (Postman)
 
 ### Endpoint
 
