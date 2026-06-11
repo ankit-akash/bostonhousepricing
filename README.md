@@ -16,12 +16,14 @@ https://github.com/ankit-akash/bostonhousepricing
 
 This project predicts the median value of owner-occupied homes in Boston based on various housing and locality features.
 
-### Key Highlights
+### The application demonstrates an end-to-end Machine Learning workflow:
 
-- Data preprocessing using StandardScaler
+- Data preprocessing
+- Feature scaling using StandardScaler
 - Linear Regression model training
-- Flask web application
-- REST API endpoint
+- Model serialization using Pickle
+- Flask web application development
+- REST API creation
 - Cloud deployment using Render
 
 ---
