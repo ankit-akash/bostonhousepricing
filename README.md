@@ -28,6 +28,49 @@ This project predicts the median value of owner-occupied homes in Boston based o
 
 ---
 
+## 🔄 Project Workflow
+
+```text
+User Input (HTML Form)
+        │
+        ▼
+Flask Web Application
+        │
+        ▼
+StandardScaler
+        │
+        ▼
+Linear Regression Model
+        │
+        ▼
+Predicted House Price
+```
+
+---
+
+## 🚀 Deployment Workflow
+
+```text
+Local Development (VS Code)
+        │
+        ▼
+Git
+        │
+        ▼
+GitHub Repository
+        │
+        ▼
+GitHub Actions (CI)
+        │
+        ▼
+Docker Build
+        │
+        ▼
+Render Deployment
+```
+
+---
+
 ## 🛠️ Software & Tools Requirements
 
 - GitHub Account
@@ -63,8 +106,6 @@ This project predicts the median value of owner-occupied homes in Boston based o
 
 ## 📊 Dataset Features
 
-The model uses the following input features:
-
 | Feature | Description                                          |
 | ------- | ---------------------------------------------------- |
 | CRIM    | Crime rate per capita                                |
@@ -92,8 +133,12 @@ bostonhousepricing/
 ├── requirements.txt
 ├── regmodel.pkl
 ├── scaler.pkl
+├── Dockerfile
 ├── templates/
 │   └── home.html
+├── .github/
+│   └── workflows/
+│       └── main.yaml
 ├── LinearRegression_Project.ipynb
 ├── README.md
 └── .gitignore
@@ -123,13 +168,13 @@ python -m venv venv
 
 ### Activate Virtual Environment
 
-Windows:
+**Windows**
 
 ```bash
 venv\Scripts\activate
 ```
 
-Linux/macOS:
+**Linux/macOS**
 
 ```bash
 source venv/bin/activate
@@ -179,18 +224,6 @@ POST /predict_api
 }
 ```
 
----
-
-## 📸 Application Screenshot
-
-Add your screenshot here:
-
-```markdown
-![Homepage](screenshots/homepage.png)
-```
-
----
-
 ## 🎯 Learning Outcomes
 
 - Data preprocessing and feature scaling
@@ -198,7 +231,9 @@ Add your screenshot here:
 - Model serialization using Pickle
 - Flask web application development
 - REST API implementation
+- Docker containerization
 - Git & GitHub workflow
+- GitHub Actions CI/CD
 - Deployment using Render
 
 ---
@@ -210,5 +245,3 @@ Add your screenshot here:
 GitHub: https://github.com/ankit-akash
 
 ---
-
-⭐ If you found this project useful, consider giving it a star!
